@@ -3,8 +3,8 @@ from aiogram import Bot, Dispatcher
 from aiogram.contrib.fsm_storage.memory import MemoryStorage
 
 
-admin='438808692'
+admin=''
 
-bot = Bot(token='1218641102:AAGuRftfG3uvCwisvvfmwKMsydY3O-6oHbk')
+bot = Bot(token='')
 dp = Dispatcher(bot, storage=MemoryStorage())
 logging.basicConfig(level=logging.INFO)
