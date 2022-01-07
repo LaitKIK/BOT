@@ -1,0 +1,4 @@
+hiredis
+aioredis
+asyncio
+aiogram
