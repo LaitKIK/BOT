@@ -1,2 +1,4 @@
-adduser.py
+auto_run.py
 docker-compose.yml
+Jenkinsfile
+.dockerignore

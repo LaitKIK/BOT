@@ -3,13 +3,14 @@
 pipeline {
     agent any
     environment{
-        server_ip   =   ""
+        server_ip        =   ""
+        home_directory   =   "/home/olexandr"
     }
     stages {
         stage('Move py script to server'){
             steps{
                 script{
-                    sh "scp auto_run.py olexandr@${server_ip}:/home/olexandr"
+                    sh "scp auto_run.py olexandr@${server_ip}:${home_directory}"
                 }
             }
         }
