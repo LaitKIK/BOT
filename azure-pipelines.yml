@@ -2,11 +2,64 @@
 # Build a Docker image
 # https://docs.microsoft.com/azure/devops/pipelines/languages/docker
 
+#Тригер на ветку на запуск пайплайна
 trigger:
-- master
+  - main
+  - releases/*
 
+#== ?
+
+#Тригер на pr на запуск пайплайна
+pr:
+  - main
+  - releases/*
+
+# Выбор платформы
 pool:
   vmImage: "ubuntu-latest"
+
+
+# для сборки на нескольких платформах
+# strategy:
+#   matrix:
+#     linux:
+#       imageName: "ubuntu-latest"
+#     mac:
+#       imageName: "macOS-latest"
+#     windows:
+#       imageName: "windows-latest"
+#   maxParallel: 1
+
+# pool:
+#   vmImage: $(imageName)
+
+# strategy:
+#   matrix:
+#     python3:
+#       pyVersion: "3"
+#     python2:
+#       pyVersion: "2"
+#   maxParallel: 1
+#${pyVersion}
+
+# Всё что выше вместе
+# strategy:
+#   matrix:
+#     py3_linux:
+#       imageName: "ubuntu-latest"
+#       pyVersion: "3"
+#     py2_linux:
+#       imageName: "ubuntu-latest"
+#       pyVersion: "2"
+#     py3_mac:
+#       imageName: "macOS-latest"
+#       pyVersion: "3"
+#     py2_mac:
+#       imageName: "macOS-latest"
+#       pyVersion: "2"
+
+# pool:
+#   vmImage: $(imageName) etc
 
 resources:
 - repo: self
